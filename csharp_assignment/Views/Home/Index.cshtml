@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Assignment C#";
+    @model Dictionary<string, double>       //import json podataka iz RetrieveJSON
+
+}
+
+<div class="text-center">
+    <table bgcolor="black" width="700">
+        <tr bgcolor="grey"><th width="200">Name</th><th width="200">Total time worked</th></tr>
+        @foreach (KeyValuePair<string, double> item in Model)
+        {
+            if(item.Value < 100)
+            {
+                <tr bgcolor=darkred><td>@item.Key</td><td>@item.Value hrs</td></tr>
+            } 
+            else
+            {
+                <tr bgcolor=lightgrey><td>@item.Key</td><td>@item.Value hrs</td></tr>
+            }
+
+        }
+    </table>
+</div>
